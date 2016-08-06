@@ -3,6 +3,7 @@ var poststylus = require('poststylus');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlPlugin = require('html-webpack-plugin');
+var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 
 module.exports = {
@@ -10,9 +11,9 @@ module.exports = {
     main: './src/js/index',
   },
   output: {
-    path: path.join(__dirname, 'public', 'assets'),
+    path: path.join(__dirname, 'public'),
     filename: '[name].js',
-    publicPath: '/assets/'
+    publicPath: '/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.json']
@@ -41,9 +42,12 @@ module.exports = {
       filename: '../index.html',
       template: './src/html/index.pug',
       title: 'My Boilerplate',
-      minify: false
+      minify: false,
+      hash: true,
+      chunks: ["index"]
     }),
-    new ExtractTextPlugin("../css/[name].css", {allChunks: true}),
+    new HtmlWebpackHarddiskPlugin(),
+    new ExtractTextPlugin("../[name].css", {allChunks: true}),
   ],
   stylus: {
     use: [
