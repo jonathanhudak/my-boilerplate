@@ -29,6 +29,7 @@ module.exports = {
           }
         },
         {
+          key: 'styl',
           test:   /\.styl$/,
           loader: "style!css!stylus"
         },
