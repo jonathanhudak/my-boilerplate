@@ -2,6 +2,7 @@ var path = require('path');
 var poststylus = require('poststylus');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
@@ -30,10 +31,17 @@ module.exports = {
         {
           test:   /\.styl$/,
           loader: "style!css!stylus"
-        }
+        },
+        { test: /\.pug$/, loader: 'pug-html?pretty=true' }
       ]
   },
   plugins: [
+    new HtmlPlugin({
+      filename: '../index.html',
+      template: './src/html/index.pug',
+      title: 'My Boilerplate',
+      minify: false
+    }),
     new ExtractTextPlugin("../css/[name].css", {allChunks: true}),
   ],
   stylus: {
