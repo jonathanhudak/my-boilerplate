@@ -15,8 +15,9 @@ html
     meta(property='og:title', content='Sharing Meta Title')
     meta(property='og:description', content='Replace me with a description')
     meta(property='og:image', content='#')
-    link(rel='stylesheet', href='/assets/main.css', media='screen')
+    if !!PRODUCTION
+      link(rel='stylesheet', href='/assets/main.css', media='screen')
   body
-    h1 hi
+    h1 Website Title
 
     include ./content.pug

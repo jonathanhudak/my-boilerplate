@@ -5,7 +5,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlPlugin = require('html-webpack-plugin');
 var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
-
 module.exports = {
   entry: {
     main: './src/js/index',
@@ -33,21 +32,12 @@ module.exports = {
           key: 'styl',
           test:   /\.styl$/,
           loader: "style!css!stylus"
-        },
-        { test: /\.pug$/, loader: 'pug-html?pretty=true' }
+        }
       ]
   },
   plugins: [
-    new HtmlPlugin({
-      filename: '../index.html',
-      template: './src/html/index.pug',
-      title: 'My Boilerplate',
-      minify: false,
-      hash: true,
-      chunks: ["index"]
-    }),
     new HtmlWebpackHarddiskPlugin(),
-    new ExtractTextPlugin("../[name].css", {allChunks: true}),
+    new ExtractTextPlugin("[name].css", {allChunks: true})
   ],
   stylus: {
     use: [

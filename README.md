@@ -1,11 +1,12 @@
 # My Boilerplate
 
-## Setup
+## Setup & Dev Mode
 
 1. Install node
 2. run `npm install`
-3. run `npm start` to start webpack-dev-server
-4. open http://localhost:8080
+3. run `npm install pug-cli g`
+4. run `npm start`
+5. open http://localhost:8080
 
 
 ## Build
