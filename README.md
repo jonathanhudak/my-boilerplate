@@ -4,7 +4,7 @@
 
 1. Install node
 2. run `npm install`
-3. run `npm install pug-cli g`
+3. run `npm install pug-cli -g`
 4. run `npm start`
 5. open http://localhost:8080
 

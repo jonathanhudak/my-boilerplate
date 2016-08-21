@@ -2,8 +2,6 @@ var path = require('path');
 var poststylus = require('poststylus');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlPlugin = require('html-webpack-plugin');
-var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 module.exports = {
   entry: {
@@ -36,7 +34,6 @@ module.exports = {
       ]
   },
   plugins: [
-    new HtmlWebpackHarddiskPlugin(),
     new ExtractTextPlugin("[name].css", {allChunks: true})
   ],
   stylus: {
