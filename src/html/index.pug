@@ -15,8 +15,8 @@ html
     meta(property='og:title', content='Sharing Meta Title')
     meta(property='og:description', content='Replace me with a description')
     meta(property='og:image', content='#')
-    if !!PRODUCTION
-      link(rel='stylesheet', href='/assets/main.css', media='screen')
+    if ENV === 'prod'
+      link(rel='stylesheet', href='main.css', media='screen')
   body
     h1 Website Title
 
