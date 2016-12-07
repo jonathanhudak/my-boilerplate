@@ -17,7 +17,9 @@ html
     meta(property='og:image', content='#')
     if ENV === 'prod'
       link(rel='stylesheet', href='main.css', media='screen')
+
   body
     h1 Website Title
 
     include ./content.pug
+    script(src='/main.js')
