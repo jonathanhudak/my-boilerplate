@@ -33,9 +33,6 @@ module.exports = {
         }
       ]
   },
-  plugins: [
-    new ExtractTextPlugin("[name].css", {allChunks: true})
-  ],
   stylus: {
     use: [
       poststylus([ 'autoprefixer' ])
